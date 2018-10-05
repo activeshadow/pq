@@ -114,5 +114,5 @@ func (h Hstore) Value() (driver.Value, error) {
 		thispart := hQuote(key) + "=>" + hQuote(val)
 		parts = append(parts, thispart)
 	}
-	return []byte(strings.Join(parts, ",")), nil
+	return strings.Join(parts, ","), nil
 }
